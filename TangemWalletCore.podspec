@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TangemWalletCore'
   s.version          = '0.0.1'
-  s.summary          = 'Use BlockchainSdk for Tangem wallet integration'
+  s.summary          = 'Use TW xcframework for Tangem integration'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TrustWallet library for Tangem wallet integration
+TW library for Tangem integration
                        DESC
 
-  s.homepage         = 'https://github.com/TangemCash/tangem-sdk-ios'
+  s.homepage         = 'https://github.com/tangem/wallet-core-binaries-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tangem AG' => '' }
