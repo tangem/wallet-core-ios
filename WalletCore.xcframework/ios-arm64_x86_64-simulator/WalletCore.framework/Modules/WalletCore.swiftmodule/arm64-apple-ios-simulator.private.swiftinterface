@@ -3582,6 +3582,7 @@ extension WalletCore.TW_Ethereum_Proto_SigningOutput : SwiftProtobuf.Message, Sw
 public struct Ethereum {
   public static func eip1014AddressCreate2(fromEthAddress: Swift.String, salt: Foundation.Data, initCodeHash: Foundation.Data) -> Swift.String
   public static func eip2645GetPath(ethAddress: Swift.String, layer: Swift.String, application: Swift.String, index: Swift.String) -> Swift.String
+  public static func eip4337GetDeploymentAddress(factoryAddress: Swift.String, logicAddress: Swift.String, ownerAddress: Swift.String) -> Swift.String
 }
 public struct EthereumAbi {
   public static func encode(fn: WalletCore.EthereumAbiFunction) -> Foundation.Data
@@ -3729,7 +3730,11 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   }
 }
 public struct EthereumMessageSigner {
+  public static func signTypedMessage(privateKey: WalletCore.PrivateKey, messageJson: Swift.String) -> Swift.String
+  public static func signTypedMessageEip155(privateKey: WalletCore.PrivateKey, messageJson: Swift.String, chainId: Swift.Int32) -> Swift.String
   public static func signMessage(privateKey: WalletCore.PrivateKey, message: Swift.String) -> Swift.String
+  public static func signMessageImmutableX(privateKey: WalletCore.PrivateKey, message: Swift.String) -> Swift.String
+  public static func signMessageEip155(privateKey: WalletCore.PrivateKey, message: Swift.String, chainId: Swift.Int32) -> Swift.String
   public static func verifyMessage(pubKey: WalletCore.PublicKey, message: Swift.String, signature: Swift.String) -> Swift.Bool
 }
 public typealias EverscaleTransfer = WalletCore.TW_Everscale_Proto_Transfer
@@ -8430,6 +8435,7 @@ public typealias TheOpenNetworkSigningInput = WalletCore.TW_TheOpenNetwork_Proto
 public typealias TheOpenNetworkSigningOutput = WalletCore.TW_TheOpenNetwork_Proto_SigningOutput
 public typealias TheOpenNetworkWalletVersion = WalletCore.TW_TheOpenNetwork_Proto_WalletVersion
 public typealias TheOpenNetworkSendMode = WalletCore.TW_TheOpenNetwork_Proto_SendMode
+public typealias TheOpenNetworkBounceBehavior = WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior
 public enum TW_TheOpenNetwork_Proto_WalletVersion : SwiftProtobuf.Enum {
   public typealias RawValue = Swift.Int
   case walletV3R1
@@ -8465,6 +8471,22 @@ extension WalletCore.TW_TheOpenNetwork_Proto_SendMode : Swift.CaseIterable {
   public static var allCases: [WalletCore.TW_TheOpenNetwork_Proto_SendMode]
   public typealias AllCases = [WalletCore.TW_TheOpenNetwork_Proto_SendMode]
 }
+public enum TW_TheOpenNetwork_Proto_BounceBehavior : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case addressDefault
+  case bounceable
+  case nonBounceable
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior : Swift.CaseIterable {
+  public static var allCases: [WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior]
+  public typealias AllCases = [WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior]
+}
 public struct TW_TheOpenNetwork_Proto_Transfer {
   public var walletVersion: WalletCore.TW_TheOpenNetwork_Proto_WalletVersion
   public var dest: Swift.String
@@ -8473,6 +8495,7 @@ public struct TW_TheOpenNetwork_Proto_Transfer {
   public var mode: Swift.UInt32
   public var expireAt: Swift.UInt32
   public var comment: Swift.String
+  public var bounceBehavior: WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
@@ -8501,6 +8524,9 @@ extension WalletCore.TW_TheOpenNetwork_Proto_WalletVersion : SwiftProtobuf._Prot
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension WalletCore.TW_TheOpenNetwork_Proto_SendMode : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_BounceBehavior : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension WalletCore.TW_TheOpenNetwork_Proto_Transfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
