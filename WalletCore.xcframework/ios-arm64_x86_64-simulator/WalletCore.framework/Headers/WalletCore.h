@@ -76,8 +76,6 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWStoredKey.h"
 #include "TWStoredKeyEncryption.h"
 #include "TWStoredKeyEncryptionLevel.h"
-#include "TWSubstrateAddress.h"
-#include "TWSubstrateSigner.h"
 #include "TWTHORChainSwap.h"
 #include "TWTezosMessageSigner.h"
 #include "TWTransactionCompiler.h"

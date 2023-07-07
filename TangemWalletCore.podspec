@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TangemWalletCore'
-  s.version          = '3.2.1-tangem2'
+  s.version          = '3.2.4-tangem1'
   s.summary          = 'Use TW xcframework for Tangem integration'
 
 # This description is used to generate tags and improve search results.
