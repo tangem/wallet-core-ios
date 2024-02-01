@@ -22,16 +22,10 @@ TW library for Tangem integration
                        DESC
 
   s.homepage         = 'https://github.com/tangem/wallet-core-binaries-ios'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  # s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Tangem AG' => '' }
+  s.author           = { 'Tangem' => 'hello@tangem.com' }
   s.source           = { :path => '.' }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '13.0'
-
+  s.ios.deployment_target = '14.5'
   s.dependency 'SwiftProtobuf'
-
-  s.vendored_frameworks = '**/WalletCore.xcframework'
+  s.vendored_frameworks = 'WalletCore.xcframework'
 
 end
