@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/tangem/swift-protobuf.git",
+            url: "https://github.com/tangem/swift-protobuf-binaries.git",
             branch: "feature/IOS-5792-SPM-dependencies-support"
         ),
     ],
@@ -27,7 +27,7 @@ let package = Package(
         .target(
             name: "_TangemWalletCoreWrapper",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
+                .product(name: "SwiftProtobuf", package: "swift-protobuf-binaries"),
                 .byName(name: "WalletCoreBinaries"),
             ],
             path: "WalletCore"
