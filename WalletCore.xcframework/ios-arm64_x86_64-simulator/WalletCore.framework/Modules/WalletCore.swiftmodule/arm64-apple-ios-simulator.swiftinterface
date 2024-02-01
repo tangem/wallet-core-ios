@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
 import Swift
@@ -8,6 +8,7 @@ import SwiftProtobuf
 @_exported import WalletCore
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public struct AES {
   public static func encryptCBC(key: Foundation.Data, data: Foundation.Data, iv: Foundation.Data, mode: WalletCore.AESPaddingMode) -> Foundation.Data?
   public static func decryptCBC(key: Foundation.Data, data: Foundation.Data, iv: Foundation.Data, mode: WalletCore.AESPaddingMode) -> Foundation.Data?
@@ -86,6 +87,10 @@ public struct TW_Aeternity_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Aeternity_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aeternity_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Aeternity_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -127,6 +132,10 @@ public struct TW_Aion_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Aion_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aion_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Aion_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -209,6 +218,18 @@ public struct TW_Algorand_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Algorand_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Algorand_Proto_AssetTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Algorand_Proto_AssetOptIn : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Algorand_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Algorand_Proto_SigningInput.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Algorand_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Algorand_Proto_Transfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -529,6 +550,44 @@ public struct TW_Aptos_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Aptos_Proto_TransferMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_StructTag : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_TokenTransferMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_ManagedTokensRegisterMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_CreateAccountMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_OfferNftMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_CancelOfferNftMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_ClaimNftMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_TortugaClaim : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_TortugaStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_TortugaUnstake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_LiquidStaking : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_LiquidStaking.OneOf_LiquidStakeTransactionPayload : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_NftMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_NftMessage.OneOf_NftTransactionPayload : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_SigningInput.OneOf_TransactionPayload : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_TransactionAuthenticator : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Aptos_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Aptos_Proto_TransferMessage : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -704,6 +763,8 @@ public struct TW_Barz_Proto_ContractAddressInput {
   public var publicKey: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Barz_Proto_ContractAddressInput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Barz_Proto_ContractAddressInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -1092,6 +1153,60 @@ public struct TW_Binance_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Binance_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_Signature : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TradeOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_CancelTradeOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SendOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SendOrder.Token : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SendOrder.Input : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SendOrder.Output : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TokenIssueOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TokenMintOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TokenBurnOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TokenFreezeOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TokenUnfreezeOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_HTLTOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_DepositHTLTOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_ClaimHTLOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_RefundHTLTOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TransferOut : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SideChainDelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SideChainRedelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SideChainUndelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TimeLockOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TimeRelockOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_TimeUnlockOrder : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SigningInput.OneOf_OrderOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Binance_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Binance_Proto_Transaction : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -1378,7 +1493,7 @@ public enum TW_Bitcoin_Proto_TransactionVariant : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Bitcoin_Proto_TransactionVariant : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Bitcoin_Proto_TransactionVariant]
+  public static let allCases: [WalletCore.TW_Bitcoin_Proto_TransactionVariant]
   public typealias AllCases = [WalletCore.TW_Bitcoin_Proto_TransactionVariant]
 }
 public struct TW_Bitcoin_Proto_Transaction {
@@ -1562,6 +1677,30 @@ public struct TW_Bitcoin_Proto_PreSigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Bitcoin_Proto_TransactionVariant : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_TransactionInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_OutPoint : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_TransactionOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_UnspentTransaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_OutputAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_TransactionPlan : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_HashPublicKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Bitcoin_Proto_PreSigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Bitcoin_Proto_TransactionVariant : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -2017,6 +2156,32 @@ public struct TW_Cardano_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Cardano_Proto_OutPoint : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_TokenAmount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_TxInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_TxOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_TokenBundle : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_RegisterStakingKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_DeregisterStakingKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_Delegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_Withdraw : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_TransactionPlan : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cardano_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Cardano_Proto_OutPoint : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -2396,8 +2561,10 @@ public enum TW_Common_Proto_SigningError : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Common_Proto_SigningError : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Common_Proto_SigningError]
+  public static let allCases: [WalletCore.TW_Common_Proto_SigningError]
   public typealias AllCases = [WalletCore.TW_Common_Proto_SigningError]
+}
+extension WalletCore.TW_Common_Proto_SigningError : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Common_Proto_SigningError : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -2423,7 +2590,7 @@ public enum TW_Cosmos_Proto_BroadcastMode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Cosmos_Proto_BroadcastMode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Cosmos_Proto_BroadcastMode]
+  public static let allCases: [WalletCore.TW_Cosmos_Proto_BroadcastMode]
   public typealias AllCases = [WalletCore.TW_Cosmos_Proto_BroadcastMode]
 }
 public enum TW_Cosmos_Proto_SigningMode : SwiftProtobuf.Enum {
@@ -2438,7 +2605,7 @@ public enum TW_Cosmos_Proto_SigningMode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Cosmos_Proto_SigningMode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Cosmos_Proto_SigningMode]
+  public static let allCases: [WalletCore.TW_Cosmos_Proto_SigningMode]
   public typealias AllCases = [WalletCore.TW_Cosmos_Proto_SigningMode]
 }
 public struct TW_Cosmos_Proto_Amount {
@@ -2855,11 +3022,11 @@ public struct TW_Cosmos_Proto_Message {
   public init()
 }
 extension WalletCore.TW_Cosmos_Proto_Message.AuthorizationType : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Cosmos_Proto_Message.AuthorizationType]
+  public static let allCases: [WalletCore.TW_Cosmos_Proto_Message.AuthorizationType]
   public typealias AllCases = [WalletCore.TW_Cosmos_Proto_Message.AuthorizationType]
 }
 extension WalletCore.TW_Cosmos_Proto_Message.VoteOption : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Cosmos_Proto_Message.VoteOption]
+  public static let allCases: [WalletCore.TW_Cosmos_Proto_Message.VoteOption]
   public typealias AllCases = [WalletCore.TW_Cosmos_Proto_Message.VoteOption]
 }
 public struct TW_Cosmos_Proto_SigningInput {
@@ -2892,6 +3059,80 @@ public struct TW_Cosmos_Proto_SigningOutput {
   public var error: WalletCore.TW_Common_Proto_SigningError
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Cosmos_Proto_BroadcastMode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_SigningMode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Amount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Fee : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Height : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.AuthorizationType : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.VoteOption : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.Send : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.Delegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.Undelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.BeginRedelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.SetWithdrawAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WithdrawDelegationReward : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.ExecuteContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmTerraExecuteContractTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmTerraExecuteContractSend : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.THORChainSend : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmTerraExecuteContractGeneric : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmExecuteContractTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmExecuteContractSend : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.WasmExecuteContractGeneric : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.RawJSON : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.SignDirect : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.StakeAuthorization : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.StakeAuthorization.OneOf_Validators : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.StakeAuthorization.Validators : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.AuthGrant : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.AuthGrant.OneOf_GrantType : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.AuthRevoke : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.MsgVote : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.MsgStrideLiquidStakingStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_Message.MsgStrideLiquidStakingRedeem : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Cosmos_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Cosmos_Proto_BroadcastMode : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -3297,6 +3538,14 @@ public struct TW_Decred_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Decred_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Decred_Proto_TransactionInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Decred_Proto_TransactionOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Decred_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Decred_Proto_Transaction : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -3445,7 +3694,7 @@ public enum TW_EOS_Proto_KeyType : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_EOS_Proto_KeyType : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_EOS_Proto_KeyType]
+  public static let allCases: [WalletCore.TW_EOS_Proto_KeyType]
   public typealias AllCases = [WalletCore.TW_EOS_Proto_KeyType]
 }
 public struct TW_EOS_Proto_Asset {
@@ -3483,6 +3732,14 @@ public struct TW_EOS_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_EOS_Proto_KeyType : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_EOS_Proto_Asset : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_EOS_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_EOS_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_EOS_Proto_KeyType : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -3535,7 +3792,7 @@ public enum TW_Ethereum_Proto_TransactionMode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Ethereum_Proto_TransactionMode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Ethereum_Proto_TransactionMode]
+  public static let allCases: [WalletCore.TW_Ethereum_Proto_TransactionMode]
   public typealias AllCases = [WalletCore.TW_Ethereum_Proto_TransactionMode]
 }
 public struct TW_Ethereum_Proto_Transaction {
@@ -3710,6 +3967,34 @@ public struct TW_Ethereum_Proto_SigningOutput {
   public var preHash: Foundation.Data
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Ethereum_Proto_TransactionMode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.OneOf_TransactionOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.ERC20Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.ERC20Approve : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.ERC721Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.ERC1155Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.ContractGeneric : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.Batch : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_Transaction.Batch.BatchedCall : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_UserOperation : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ethereum_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Ethereum_Proto_TransactionMode : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -4014,7 +4299,7 @@ public enum TW_Everscale_Proto_MessageBehavior : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Everscale_Proto_MessageBehavior : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Everscale_Proto_MessageBehavior]
+  public static let allCases: [WalletCore.TW_Everscale_Proto_MessageBehavior]
   public typealias AllCases = [WalletCore.TW_Everscale_Proto_MessageBehavior]
 }
 public struct TW_Everscale_Proto_Transfer {
@@ -4053,6 +4338,18 @@ public struct TW_Everscale_Proto_SigningOutput {
   public var encoded: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Everscale_Proto_MessageBehavior : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Everscale_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Everscale_Proto_Transfer.OneOf_AccountStateOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Everscale_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Everscale_Proto_SigningInput.OneOf_ActionOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Everscale_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Everscale_Proto_MessageBehavior : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -4236,6 +4533,30 @@ public struct TW_FIO_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_FIO_Proto_PublicAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_NewFundsContent : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.RegisterFioAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.AddPubAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.RenewFioAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_Action.NewFundsRequest : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_ChainParams : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_FIO_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_FIO_Proto_PublicAddress : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -4368,7 +4689,7 @@ public enum TW_Filecoin_Proto_DerivationType : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Filecoin_Proto_DerivationType : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Filecoin_Proto_DerivationType]
+  public static let allCases: [WalletCore.TW_Filecoin_Proto_DerivationType]
   public typealias AllCases = [WalletCore.TW_Filecoin_Proto_DerivationType]
 }
 public struct TW_Filecoin_Proto_SigningInput {
@@ -4391,6 +4712,12 @@ public struct TW_Filecoin_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Filecoin_Proto_DerivationType : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Filecoin_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Filecoin_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Filecoin_Proto_DerivationType : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -4817,6 +5144,34 @@ public struct TW_Harmony_Proto_DirectiveCollectRewards {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Harmony_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_SigningInput.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_TransactionMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_StakingMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_StakingMessage.OneOf_StakeMsg : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_Description : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_Decimal : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_CommissionRate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_DirectiveCreateValidator : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_DirectiveEditValidator : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_DirectiveDelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_DirectiveUndelegate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Harmony_Proto_DirectiveCollectRewards : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Harmony_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -5035,6 +5390,20 @@ public struct TW_Hedera_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Hedera_Proto_Timestamp : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_TransactionID : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_TransferMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_TransactionBody : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_TransactionBody.OneOf_Data : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Hedera_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Hedera_Proto_Timestamp : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -5116,7 +5485,7 @@ public enum TW_IOST_Proto_Algorithm : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_IOST_Proto_Algorithm : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_IOST_Proto_Algorithm]
+  public static let allCases: [WalletCore.TW_IOST_Proto_Algorithm]
   public typealias AllCases = [WalletCore.TW_IOST_Proto_Algorithm]
 }
 public struct TW_IOST_Proto_Action {
@@ -5208,6 +5577,22 @@ public struct TW_IOST_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_IOST_Proto_Algorithm : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_AmountLimit : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_Signature : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_AccountInfo : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IOST_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_IOST_Proto_Algorithm : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -5303,6 +5688,10 @@ public struct TW_Icon_Proto_SigningOutput {
   public var error: WalletCore.TW_Common_Proto_SigningError
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Icon_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Icon_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Icon_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -5625,6 +6014,42 @@ public struct TW_IoTeX_Proto_Action {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_IoTeX_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.OneOf_Message : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.Create : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.Reclaim : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.AddDeposit : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.Restake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.ChangeCandidate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.TransferOwnership : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.CandidateBasicInfo : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Staking.CandidateRegister : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_ContractCall : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_SigningInput.OneOf_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_ActionCore : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_ActionCore.OneOf_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_IoTeX_Proto_Action : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_IoTeX_Proto_Transfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -5843,7 +6268,7 @@ public enum TW_LiquidStaking_Proto_Coin : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_LiquidStaking_Proto_Coin : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_LiquidStaking_Proto_Coin]
+  public static let allCases: [WalletCore.TW_LiquidStaking_Proto_Coin]
   public typealias AllCases = [WalletCore.TW_LiquidStaking_Proto_Coin]
 }
 public enum TW_LiquidStaking_Proto_Blockchain : SwiftProtobuf.Enum {
@@ -5861,7 +6286,7 @@ public enum TW_LiquidStaking_Proto_Blockchain : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_LiquidStaking_Proto_Blockchain : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_LiquidStaking_Proto_Blockchain]
+  public static let allCases: [WalletCore.TW_LiquidStaking_Proto_Blockchain]
   public typealias AllCases = [WalletCore.TW_LiquidStaking_Proto_Blockchain]
 }
 public enum TW_LiquidStaking_Proto_Protocol : SwiftProtobuf.Enum {
@@ -5878,7 +6303,7 @@ public enum TW_LiquidStaking_Proto_Protocol : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_LiquidStaking_Proto_Protocol : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_LiquidStaking_Proto_Protocol]
+  public static let allCases: [WalletCore.TW_LiquidStaking_Proto_Protocol]
   public typealias AllCases = [WalletCore.TW_LiquidStaking_Proto_Protocol]
 }
 public enum TW_LiquidStaking_Proto_StatusCode : SwiftProtobuf.Enum {
@@ -5897,7 +6322,7 @@ public enum TW_LiquidStaking_Proto_StatusCode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_LiquidStaking_Proto_StatusCode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_LiquidStaking_Proto_StatusCode]
+  public static let allCases: [WalletCore.TW_LiquidStaking_Proto_StatusCode]
   public typealias AllCases = [WalletCore.TW_LiquidStaking_Proto_StatusCode]
 }
 public struct TW_LiquidStaking_Proto_Status {
@@ -6012,6 +6437,32 @@ public struct TW_LiquidStaking_Proto_Output {
     public static func == (a: WalletCore.TW_LiquidStaking_Proto_Output.OneOf_SigningInputOneof, b: WalletCore.TW_LiquidStaking_Proto_Output.OneOf_SigningInputOneof) -> Swift.Bool
   }
   public init()
+}
+extension WalletCore.TW_LiquidStaking_Proto_Coin : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Blockchain : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Protocol : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_StatusCode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Status : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Asset : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Stake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Unstake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Withdraw : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Input : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Input.OneOf_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Output : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_LiquidStaking_Proto_Output.OneOf_SigningInputOneof : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_LiquidStaking_Proto_Coin : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -6226,6 +6677,22 @@ public struct TW_MultiversX_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_MultiversX_Proto_GenericAction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_EGLDTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_ESDTTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_ESDTNFTTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_Accounts : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_SigningInput.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_MultiversX_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_MultiversX_Proto_GenericAction : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -6500,6 +6967,42 @@ public struct TW_NEAR_Proto_SigningOutput {
   public var hash: Foundation.Data
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_NEAR_Proto_PublicKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_FunctionCallPermission : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_FullAccessPermission : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_AccessKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_AccessKey.OneOf_Permission : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_CreateAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_DeployContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_FunctionCall : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_Stake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_AddKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_DeleteKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_DeleteAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_TokenTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_Action : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_Action.OneOf_Payload : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEAR_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_NEAR_Proto_PublicKey : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -6792,6 +7295,30 @@ public struct TW_NEO_Proto_TransactionPlan {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_NEO_Proto_TransactionInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_OutputAddress : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_TransactionOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_Transaction.OneOf_TransactionOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_Transaction.Nep5Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_Transaction.InvocationGeneric : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_TransactionOutputPlan : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_TransactionAttributePlan : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NEO_Proto_TransactionPlan : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_NEO_Proto_TransactionInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -6979,6 +7506,18 @@ public struct TW_NULS_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_NULS_Proto_TransactionCoinFrom : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NULS_Proto_TransactionCoinTo : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NULS_Proto_Signature : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NULS_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NULS_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_NULS_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_NULS_Proto_TransactionCoinFrom : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7074,6 +7613,12 @@ public struct TW_Nano_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Nano_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nano_Proto_SigningInput.OneOf_LinkOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nano_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Nano_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7147,6 +7692,14 @@ public struct TW_Nebulas_Proto_RawTransaction {
   public var sign: Foundation.Data
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Nebulas_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nebulas_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nebulas_Proto_Data : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nebulas_Proto_RawTransaction : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Nebulas_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -7417,6 +7970,34 @@ public struct TW_Nervos_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Nervos_Proto_TransactionPlan : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_CellDep : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_OutPoint : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_CellOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_Script : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_NativeTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_SudtTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_DaoDeposit : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_DaoWithdrawPhase1 : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_DaoWithdrawPhase2 : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_SigningInput.OneOf_OperationOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_Cell : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nervos_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Nervos_Proto_TransactionPlan : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7581,6 +8162,10 @@ public struct TW_Nimiq_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Nimiq_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Nimiq_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Nimiq_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7667,6 +8252,18 @@ public struct TW_Oasis_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Oasis_Proto_TransferMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Oasis_Proto_EscrowMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Oasis_Proto_ReclaimEscrowMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Oasis_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Oasis_Proto_SigningInput.OneOf_Message : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Oasis_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Oasis_Proto_TransferMessage : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7742,6 +8339,10 @@ public struct TW_Ontology_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Ontology_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ontology_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Ontology_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -7789,7 +8390,7 @@ public enum TW_Polkadot_Proto_RewardDestination : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Polkadot_Proto_RewardDestination : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Polkadot_Proto_RewardDestination]
+  public static let allCases: [WalletCore.TW_Polkadot_Proto_RewardDestination]
   public typealias AllCases = [WalletCore.TW_Polkadot_Proto_RewardDestination]
 }
 public struct TW_Polkadot_Proto_Era {
@@ -8252,6 +8853,72 @@ public struct TW_Polkadot_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Polkadot_Proto_RewardDestination : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Era : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_CustomCallIndices : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_CallIndices : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_CallIndices.OneOf_Variant : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance.Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance.BatchTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance.AssetTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Balance.BatchAssetTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.Bond : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.BondAndNominate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.BondExtra : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.Unbond : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.Rebond : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.WithdrawUnbonded : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.Nominate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.ChillAndUnbond : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Staking.Chill : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity.JoinIdentityAsKey : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity.AddAuthorization : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity.AddAuthorization.DataMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_Identity.AddAuthorization.AuthData : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_PolymeshCall : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_PolymeshCall.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_SigningInput.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Polkadot_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Polkadot_Proto_RewardDestination : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -8739,6 +9406,28 @@ public struct TW_Ripple_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Ripple_Proto_CurrencyAmount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationTrustSet : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationPayment : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationPayment.OneOf_AmountOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationNFTokenBurn : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationNFTokenCreateOffer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationNFTokenAcceptOffer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_OperationNFTokenCancelOffer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_SigningInput.OneOf_OperationOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Ripple_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Ripple_Proto_CurrencyAmount : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -9072,6 +9761,40 @@ public struct TW_Solana_Proto_PreSigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Solana_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_DelegateStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_DeactivateStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_DeactivateAllStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_WithdrawStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_StakeAccountValue : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_WithdrawAllStake : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_CreateTokenAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_TokenTransfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_CreateAndTransferToken : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_CreateNonceAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_WithdrawNonceAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_AdvanceNonceAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_SigningInput.OneOf_TransactionType : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Solana_Proto_PreSigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Solana_Proto_Transfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -9272,7 +9995,7 @@ public enum TW_Stellar_Proto_ClaimPredicate : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_Stellar_Proto_ClaimPredicate : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Stellar_Proto_ClaimPredicate]
+  public static let allCases: [WalletCore.TW_Stellar_Proto_ClaimPredicate]
   public typealias AllCases = [WalletCore.TW_Stellar_Proto_ClaimPredicate]
 }
 public struct TW_Stellar_Proto_Asset {
@@ -9432,6 +10155,38 @@ public struct TW_Stellar_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Stellar_Proto_ClaimPredicate : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_Asset : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_OperationCreateAccount : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_OperationPayment : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_OperationChangeTrust : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_Claimant : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_OperationCreateClaimableBalance : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_OperationClaimClaimableBalance : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_MemoVoid : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_MemoText : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_MemoId : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_MemoHash : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_SigningInput.OneOf_OperationOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_SigningInput.OneOf_MemoTypeOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Stellar_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Stellar_Proto_ClaimPredicate : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -9714,6 +10469,14 @@ public struct TW_Sui_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Sui_Proto_SignDirect : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Sui_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Sui_Proto_SigningInput.OneOf_TransactionPayload : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Sui_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Sui_Proto_SignDirect : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -9769,7 +10532,7 @@ public enum TW_THORChainSwap_Proto_Chain : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_THORChainSwap_Proto_Chain : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_THORChainSwap_Proto_Chain]
+  public static let allCases: [WalletCore.TW_THORChainSwap_Proto_Chain]
   public typealias AllCases = [WalletCore.TW_THORChainSwap_Proto_Chain]
 }
 public enum TW_THORChainSwap_Proto_ErrorCode : SwiftProtobuf.Enum {
@@ -9791,7 +10554,7 @@ public enum TW_THORChainSwap_Proto_ErrorCode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_THORChainSwap_Proto_ErrorCode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_THORChainSwap_Proto_ErrorCode]
+  public static let allCases: [WalletCore.TW_THORChainSwap_Proto_ErrorCode]
   public typealias AllCases = [WalletCore.TW_THORChainSwap_Proto_ErrorCode]
 }
 public struct TW_THORChainSwap_Proto_Error {
@@ -9883,6 +10646,20 @@ public struct TW_THORChainSwap_Proto_SwapOutput {
     public static func == (a: WalletCore.TW_THORChainSwap_Proto_SwapOutput.OneOf_SigningInputOneof, b: WalletCore.TW_THORChainSwap_Proto_SwapOutput.OneOf_SigningInputOneof) -> Swift.Bool
   }
   public init()
+}
+extension WalletCore.TW_THORChainSwap_Proto_Chain : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_ErrorCode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_Error : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_Asset : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_SwapInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_SwapOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_THORChainSwap_Proto_SwapOutput.OneOf_SigningInputOneof : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_THORChainSwap_Proto_Chain : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -10020,7 +10797,7 @@ public struct TW_Tezos_Proto_Operation {
   public init()
 }
 extension WalletCore.TW_Tezos_Proto_Operation.OperationKind : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_Tezos_Proto_Operation.OperationKind]
+  public static let allCases: [WalletCore.TW_Tezos_Proto_Operation.OperationKind]
   public typealias AllCases = [WalletCore.TW_Tezos_Proto_Operation.OperationKind]
 }
 public struct TW_Tezos_Proto_FA12Parameters {
@@ -10092,6 +10869,36 @@ public struct TW_Tezos_Proto_DelegationOperationData {
   public var delegate: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Tezos_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_OperationList : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_Operation : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_Operation.OneOf_OperationData : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_Operation.OperationKind : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_FA12Parameters : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_Txs : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_TxObject : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_FA2Parameters : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_OperationParameters : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_OperationParameters.OneOf_Parameters : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_TransactionOperationData : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_RevealOperationData : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tezos_Proto_DelegationOperationData : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Tezos_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -10240,7 +11047,7 @@ public enum TW_TheOpenNetwork_Proto_WalletVersion : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_TheOpenNetwork_Proto_WalletVersion : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_TheOpenNetwork_Proto_WalletVersion]
+  public static let allCases: [WalletCore.TW_TheOpenNetwork_Proto_WalletVersion]
   public typealias AllCases = [WalletCore.TW_TheOpenNetwork_Proto_WalletVersion]
 }
 public enum TW_TheOpenNetwork_Proto_SendMode : SwiftProtobuf.Enum {
@@ -10259,7 +11066,7 @@ public enum TW_TheOpenNetwork_Proto_SendMode : SwiftProtobuf.Enum {
   }
 }
 extension WalletCore.TW_TheOpenNetwork_Proto_SendMode : Swift.CaseIterable {
-  public static var allCases: [WalletCore.TW_TheOpenNetwork_Proto_SendMode]
+  public static let allCases: [WalletCore.TW_TheOpenNetwork_Proto_SendMode]
   public typealias AllCases = [WalletCore.TW_TheOpenNetwork_Proto_SendMode]
 }
 public struct TW_TheOpenNetwork_Proto_Transfer {
@@ -10294,6 +11101,18 @@ public struct TW_TheOpenNetwork_Proto_SigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_WalletVersion : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_SendMode : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_SigningInput.OneOf_ActionOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_TheOpenNetwork_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_TheOpenNetwork_Proto_WalletVersion : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -10353,6 +11172,10 @@ public struct TW_Theta_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Theta_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Theta_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Theta_Proto_SigningInput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -10381,6 +11204,8 @@ public struct TW_TxCompiler_Proto_PreSigningOutput {
   public var errorMessage: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_TxCompiler_Proto_PreSigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_TxCompiler_Proto_PreSigningOutput : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
@@ -10668,6 +11493,48 @@ public struct TW_Tron_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Tron_Proto_TransferContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_TransferAssetContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_TransferTRC20Contract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_FreezeBalanceContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_FreezeBalanceV2Contract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_UnfreezeBalanceV2Contract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_WithdrawExpireUnfreezeContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_DelegateResourceContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_UnDelegateResourceContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_UnfreezeBalanceContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_UnfreezeAssetContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_VoteAssetContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_VoteWitnessContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_VoteWitnessContract.Vote : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_WithdrawBalanceContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_TriggerSmartContract : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_BlockHeader : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_Transaction.OneOf_ContractOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Tron_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Tron_Proto_TransferContract : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -10930,6 +11797,12 @@ public struct TW_VeChain_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_VeChain_Proto_Clause : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_VeChain_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_VeChain_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_VeChain_Proto_Clause : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -11065,6 +11938,18 @@ public struct TW_Waves_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
+extension WalletCore.TW_Waves_Proto_TransferMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Waves_Proto_LeaseMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Waves_Proto_CancelLeaseMessage : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Waves_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Waves_Proto_SigningInput.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Waves_Proto_SigningOutput : @unchecked Swift.Sendable {
+}
 extension WalletCore.TW_Waves_Proto_TransferMessage : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -11176,6 +12061,18 @@ public struct TW_Zilliqa_Proto_SigningOutput {
   public var json: Swift.String
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension WalletCore.TW_Zilliqa_Proto_Transaction : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Zilliqa_Proto_Transaction.OneOf_MessageOneof : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Zilliqa_Proto_Transaction.Transfer : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Zilliqa_Proto_Transaction.Raw : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Zilliqa_Proto_SigningInput : @unchecked Swift.Sendable {
+}
+extension WalletCore.TW_Zilliqa_Proto_SigningOutput : @unchecked Swift.Sendable {
 }
 extension WalletCore.TW_Zilliqa_Proto_Transaction : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
