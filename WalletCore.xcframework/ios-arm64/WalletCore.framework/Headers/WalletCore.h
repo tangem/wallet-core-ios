@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #import <Foundation/Foundation.h>
 
@@ -28,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWBase58.h"
 #include "TWBase64.h"
 #include "TWBitcoinAddress.h"
+#include "TWBitcoinFee.h"
 #include "TWBitcoinMessageSigner.h"
 #include "TWBitcoinScript.h"
 #include "TWBitcoinSigHashType.h"
@@ -46,6 +45,7 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWEthereumAbiValue.h"
 #include "TWEthereumChainID.h"
 #include "TWEthereumMessageSigner.h"
+#include "TWEthereumRlp.h"
 #include "TWFIOAccount.h"
 #include "TWFilecoinAddressConverter.h"
 #include "TWFilecoinAddressType.h"
@@ -80,4 +80,5 @@ FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 #include "TWTezosMessageSigner.h"
 #include "TWTransactionCompiler.h"
 #include "TWTronMessageSigner.h"
+#include "TWWalletConnectRequest.h"
 #include "TWWebAuthn.h"
