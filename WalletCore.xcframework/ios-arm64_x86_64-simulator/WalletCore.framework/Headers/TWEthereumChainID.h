@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE from \registry.json, changes made here WILL BE LOST.
 //
@@ -20,20 +18,25 @@ enum TWEthereumChainID {
     TWEthereumChainIDEthereum = 1,
     TWEthereumChainIDClassic = 61,
     TWEthereumChainIDRootstock = 30,
+    TWEthereumChainIDManta = 169,
     TWEthereumChainIDPoa = 99,
+    TWEthereumChainIDOpbnb = 204,
     TWEthereumChainIDTfuelevm = 361,
     TWEthereumChainIDVechain = 74,
     TWEthereumChainIDCallisto = 820,
-    TWEthereumChainIDTomochain = 88,
+    TWEthereumChainIDViction = 88,
     TWEthereumChainIDPolygon = 137,
     TWEthereumChainIDOkc = 66,
     TWEthereumChainIDThundertoken = 108,
     TWEthereumChainIDCfxevm = 1030,
-    TWEthereumChainIDOpbnb = 5611,
+    TWEthereumChainIDMantle = 5000,
     TWEthereumChainIDGochain = 60,
+    TWEthereumChainIDZeneon = 7332,
+    TWEthereumChainIDBase = 8453,
     TWEthereumChainIDMeter = 82,
     TWEthereumChainIDCelo = 42220,
-    TWEthereumChainIDScroll = 534353,
+    TWEthereumChainIDLinea = 59144,
+    TWEthereumChainIDScroll = 534352,
     TWEthereumChainIDWanchain = 888,
     TWEthereumChainIDCronos = 25,
     TWEthereumChainIDOptimism = 10,
@@ -55,8 +58,11 @@ enum TWEthereumChainID {
     TWEthereumChainIDKlaytn = 8217,
     TWEthereumChainIDAvalanchec = 43114,
     TWEthereumChainIDEvmos = 9001,
+    TWEthereumChainIDArbitrumnova = 42170,
     TWEthereumChainIDArbitrum = 42161,
     TWEthereumChainIDSmartchain = 56,
+    TWEthereumChainIDZetaevm = 7000,
+    TWEthereumChainIDNeon = 245022934,
     TWEthereumChainIDAurora = 1313161554,
 };
 
