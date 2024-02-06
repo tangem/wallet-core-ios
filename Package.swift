@@ -20,7 +20,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/tangem/swift-protobuf-binaries.git",
-            branch: "feature/IOS-5792-SPM-dependencies-support"
+            exact: "1.25.2-tangem1"
         ),
     ],
     targets: [
