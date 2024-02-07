@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-protobuf-binaries",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tangem/swift-protobuf-binaries.git",
+      "state" : {
+        "revision" : "de30521530591d98be12133724e3d78bc0524e41",
+        "version" : "1.25.2-tangem1"
+      }
+    }
+  ],
+  "version" : 2
+}
