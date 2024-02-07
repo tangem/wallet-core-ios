@@ -13,8 +13,8 @@ let package = Package(
         // This product is an implementation detail, don't import or use it
         // Just import the `WalletCore` module as usual and you're good to go
         .library(
-            name: "_TangemWalletCoreWrapper",
-            targets: ["_TangemWalletCoreWrapper"]
+            name: "TangemWalletCoreBinariesWrapper",
+            targets: ["TangemWalletCoreBinariesWrapper"]
         ),
     ],
     dependencies: [
@@ -25,7 +25,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "_TangemWalletCoreWrapper",
+            name: "TangemWalletCoreBinariesWrapper",
             dependencies: [
                 .product(name: "SwiftProtobuf", package: "swift-protobuf-binaries"),
                 .byName(name: "WalletCoreBinaries"),
