@@ -27,7 +27,7 @@ TW library for Tangem integration
   s.source           = { :path => '.' }
   s.ios.deployment_target = '14.5'
   s.ios.swift_version = '5.0'
-  s.dependency 'SwiftProtobuf', '~>1.25.0'
+  s.dependency 'SwiftProtobuf', '=1.25.2'
   s.vendored_frameworks = 'WalletCore.xcframework'
 
 end
