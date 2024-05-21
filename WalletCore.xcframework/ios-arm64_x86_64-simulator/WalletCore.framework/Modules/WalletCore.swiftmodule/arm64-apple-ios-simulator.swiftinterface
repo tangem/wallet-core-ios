@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name WalletCore
 import Foundation
 import Swift
 import SwiftProtobuf
@@ -13619,6 +13618,17 @@ extension WalletCore.TW_TheOpenNetwork_Proto_SigningOutput : SwiftProtobuf.Messa
   public var hashValue: Swift.Int {
     get
   }
+}
+@_hasMissingDesignatedInitializers final public class TheOpenNetworkAddress : WalletCore.Address {
+  public static func == (lhs: WalletCore.TheOpenNetworkAddress, rhs: WalletCore.TheOpenNetworkAddress) -> Swift.Bool
+  public static func isValidString(string: Swift.String) -> Swift.Bool
+  final public var description: Swift.String {
+    get
+  }
+  public init?(string: Swift.String)
+  public init(publicKey: WalletCore.PublicKey)
+  @objc deinit
+  final public func stringRepresentation(userFriendly: Swift.Bool, bounceable: Swift.Bool, testOnly: Swift.Bool) -> Swift.String
 }
 public typealias ThetaSigningInput = WalletCore.TW_Theta_Proto_SigningInput
 public typealias ThetaSigningOutput = WalletCore.TW_Theta_Proto_SigningOutput
