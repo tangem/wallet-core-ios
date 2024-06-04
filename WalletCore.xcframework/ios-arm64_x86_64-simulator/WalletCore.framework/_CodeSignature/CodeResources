@@ -302,11 +302,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		A0cqcWSPySIBJQk+bjeAsV3AhhI=
+		sU0Mt6pfXyVz8bdCTbprS8/Rccg=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		3QbUwanjTutWkNIi3QvboCXV7wQ=
+		RMVYpv2RizP16Dbi9BuaCBvElUU=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -322,11 +322,11 @@
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vgEz4E/ie7lJvrdH3NEFYu67dKE=
+		eiHjkSZdf9TXGX1CYeTyh7+No4Q=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		3QbUwanjTutWkNIi3QvboCXV7wQ=
+		RMVYpv2RizP16Dbi9BuaCBvElUU=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -342,7 +342,7 @@
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		M+m+93yDDOCnp5QmVOjQtUABsvA=
+		vbV6LfcGa7xKCXYIkOG+7w+Sdyo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -873,7 +873,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uiGiNSPUVvjixyidZzM0/SfngwF3bB3cBvenrs8dpIw=
+			SwlOQA6ZXifsVh7kqznGwUg3FA07wXCpnZlCwYZtpIA=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -901,14 +901,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JtiWHDOgFOxChWWZMk1ueTuB/UI+1D+ZeihBGsBnc1k=
+			vNJURLRKF3O3E8BCDUZufyjdoSta5xAUt9x2BAQPgdg=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uiGiNSPUVvjixyidZzM0/SfngwF3bB3cBvenrs8dpIw=
+			SwlOQA6ZXifsVh7kqznGwUg3FA07wXCpnZlCwYZtpIA=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -936,7 +936,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KYon2nX/WMl+SpZNZLTVODXcSdQIhKuTLJAwizOQzz4=
+			81p1UyNoMVcKCo2J1lViKAIJiKFoz/lkcnCRguNnrL4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
