@@ -4,7 +4,7 @@ on:
   push:
     branches:
       # - 'main'  # TODO: Uncomment
-      - 'feature/IOS-6122_build_scripts' # TODO: remove
+      - 'test/IOS-6122_build_scripts' # TODO: remove since the default branch ('main') should be used as a target
 
 jobs:
   create_tag_and_release:
