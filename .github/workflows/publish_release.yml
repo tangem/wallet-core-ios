@@ -3,8 +3,7 @@ run-name: Publish new release with changes from commit '${{ github.event.head_co
 on: 
   push:
     branches:
-      # - 'main'  # TODO: Uncomment
-      - 'test/IOS-6122_build_scripts' # TODO: remove since the default branch ('main') should be used as a target
+      - 'main'
 
 jobs:
   create_tag_and_release:
@@ -39,4 +38,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           generate_release_notes: true
           make_latest: true
-          target_commitish: 'test/IOS-6122_build_scripts' # TODO: remove since the default branch ('main') should be used as a target
