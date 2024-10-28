@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios14.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name WalletCore
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Foundation
 import Swift
 import SwiftProtobuf
@@ -20,7 +21,7 @@ public enum AESPaddingMode : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.AESPaddingMode]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.AESPaddingMode] {
+  nonisolated public static var allCases: [WalletCore.AESPaddingMode] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -2133,7 +2134,7 @@ public enum BitcoinSigHashType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.BitcoinSigHashType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.BitcoinSigHashType] {
+  nonisolated public static var allCases: [WalletCore.BitcoinSigHashType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -3025,7 +3026,7 @@ public enum Blockchain : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.Blockchain]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.Blockchain] {
+  nonisolated public static var allCases: [WalletCore.Blockchain] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -3594,7 +3595,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.CoinType] {
+  nonisolated public static var allCases: [WalletCore.CoinType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -4664,7 +4665,7 @@ public enum Curve : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConverti
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.Curve]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.Curve] {
+  nonisolated public static var allCases: [WalletCore.Curve] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -4801,7 +4802,7 @@ public enum Derivation : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.Derivation]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.Derivation] {
+  nonisolated public static var allCases: [WalletCore.Derivation] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -6262,7 +6263,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.EthereumChainID]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.EthereumChainID] {
+  nonisolated public static var allCases: [WalletCore.EthereumChainID] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -6942,7 +6943,7 @@ public enum FilecoinAddressType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.FilecoinAddressType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.FilecoinAddressType] {
+  nonisolated public static var allCases: [WalletCore.FilecoinAddressType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -6955,7 +6956,7 @@ public enum FiroAddressType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.FiroAddressType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.FiroAddressType] {
+  nonisolated public static var allCases: [WalletCore.FiroAddressType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -7242,7 +7243,7 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.HDVersion]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.HDVersion] {
+  nonisolated public static var allCases: [WalletCore.HDVersion] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -7346,7 +7347,7 @@ public enum HRP : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConvertibl
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.HRP]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.HRP] {
+  nonisolated public static var allCases: [WalletCore.HRP] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -11752,7 +11753,7 @@ public enum PrivateKeyType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.PrivateKeyType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.PrivateKeyType] {
+  nonisolated public static var allCases: [WalletCore.PrivateKeyType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -11804,7 +11805,7 @@ public enum PublicKeyType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.PublicKeyType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.PublicKeyType] {
+  nonisolated public static var allCases: [WalletCore.PublicKeyType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -11819,7 +11820,7 @@ public enum Purpose : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.Purpose]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.Purpose] {
+  nonisolated public static var allCases: [WalletCore.Purpose] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -12156,7 +12157,7 @@ public enum SS58AddressType : Swift.UInt8, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt8)
   public typealias AllCases = [WalletCore.SS58AddressType]
   public typealias RawValue = Swift.UInt8
-  public static var allCases: [WalletCore.SS58AddressType] {
+  nonisolated public static var allCases: [WalletCore.SS58AddressType] {
     get
   }
   public var rawValue: Swift.UInt8 {
@@ -13254,7 +13255,7 @@ public enum StellarMemoType : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.StellarMemoType]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.StellarMemoType] {
+  nonisolated public static var allCases: [WalletCore.StellarMemoType] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -13270,7 +13271,7 @@ public enum StellarPassphrase : Swift.UInt32, Swift.CaseIterable, Swift.CustomSt
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.StellarPassphrase]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.StellarPassphrase] {
+  nonisolated public static var allCases: [WalletCore.StellarPassphrase] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -13285,7 +13286,7 @@ public enum StellarVersionByte : Swift.UInt16, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt16)
   public typealias AllCases = [WalletCore.StellarVersionByte]
   public typealias RawValue = Swift.UInt16
-  public static var allCases: [WalletCore.StellarVersionByte] {
+  nonisolated public static var allCases: [WalletCore.StellarVersionByte] {
     get
   }
   public var rawValue: Swift.UInt16 {
@@ -13343,7 +13344,7 @@ public enum StoredKeyEncryption : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.StoredKeyEncryption]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.StoredKeyEncryption] {
+  nonisolated public static var allCases: [WalletCore.StoredKeyEncryption] {
     get
   }
   public var rawValue: Swift.UInt32 {
@@ -13358,7 +13359,7 @@ public enum StoredKeyEncryptionLevel : Swift.UInt32, Swift.CaseIterable {
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.StoredKeyEncryptionLevel]
   public typealias RawValue = Swift.UInt32
-  public static var allCases: [WalletCore.StoredKeyEncryptionLevel] {
+  nonisolated public static var allCases: [WalletCore.StoredKeyEncryptionLevel] {
     get
   }
   public var rawValue: Swift.UInt32 {
