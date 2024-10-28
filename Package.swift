@@ -20,7 +20,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/tangem/swift-protobuf-binaries.git",
-            exact: "1.25.2-tangem1"
+            .upToNextMajor(from: "1.25.2-tangem1")
         ),
     ],
     targets: [
