@@ -14607,7 +14607,7 @@ public struct TW_TheOpenNetwork_Proto_Transfer {
 }
 public struct TW_TheOpenNetwork_Proto_JettonTransfer {
   public var queryID: Swift.UInt64
-  public var jettonAmount: Swift.UInt64
+  public var jettonAmount: Foundation.Data
   public var toOwner: Swift.String
   public var responseAddress: Swift.String
   public var forwardAmount: Swift.UInt64
