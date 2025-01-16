@@ -14764,6 +14764,7 @@ public struct TransactionCompiler {
   public static func preImageHashes(coinType: WalletCore.CoinType, txInputData: Foundation.Data) -> Foundation.Data
   public static func compileWithSignatures(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector) -> Foundation.Data
   public static func compileWithSignaturesAndPubKeyType(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector, pubKeyType: WalletCore.PublicKeyType) -> Foundation.Data
+  public static func tangemCompileWithSignaturesAndPubKeyType(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector, pubKeyType: WalletCore.PublicKeyType) -> Foundation.Data
 }
 public struct TransactionDecoder {
   public static func decode(coinType: WalletCore.CoinType, encodedTx: Foundation.Data) -> Foundation.Data

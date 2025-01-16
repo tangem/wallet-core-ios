@@ -306,7 +306,7 @@
 		</data>
 		<key>Headers/TWTransactionCompiler.h</key>
 		<data>
-		xcCvvGG+v5Yy4YIE5Uo5yt51PxA=
+		OSwLE3/a2EpkzrP3hnHIRKzFRqY=
 		</data>
 		<key>Headers/TWTransactionDecoder.h</key>
 		<data>
@@ -338,15 +338,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IxtR8YN/LI4EcSWd9Slv9EVhAOI=
+		nFRfldaYZXUTyJDTj3IxApa3+as=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		A6xftKi3i6dPofC+CFzuowWKWz4=
+		Wk6lzCBjHEfUUqAwKg5EGf/vmH0=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0yqlmOkATPnjYv/JzTMiyf6NdPA=
+		jthmPS5FzHWkABJedNdhQ++9DkE=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -354,19 +354,19 @@
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0yqlmOkATPnjYv/JzTMiyf6NdPA=
+		jthmPS5FzHWkABJedNdhQ++9DkE=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5M243jWGLugFM0wYr4wm+kDRDSk=
+		gTGuDyM1/eQjPBH+1g18cxjatWM=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		A6xftKi3i6dPofC+CFzuowWKWz4=
+		Wk6lzCBjHEfUUqAwKg5EGf/vmH0=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		gR/fsRY7NKrVxUWZhgglrgvK9a8=
+		j+C1BhNVEq0FZ7bf8OPQjZMuHM4=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -374,11 +374,11 @@
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gR/fsRY7NKrVxUWZhgglrgvK9a8=
+		j+C1BhNVEq0FZ7bf8OPQjZMuHM4=
 		</data>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zUIPYroZECp4/H9Zs4WzA53OA1Y=
+		6apWwBJ1rC2bNJexi6Hj6HMfCmQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -916,7 +916,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cV7D6NrbVq8MmV+Lgz60nRm52ja5VoW4jVwop84lrjM=
+			8Mq/r9XVxq9mUX8w+5V2LNWFZRpj2+G6oEXY2k8ki48=
 			</data>
 		</dict>
 		<key>Headers/TWTransactionDecoder.h</key>
@@ -972,14 +972,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6dZSq5/ZkdriBmG5I6hFdPXXBMThmbqq/pFOVrfJa4Y=
+			46AWYvqM/COR7ur1MlZiJZqkge37yT/lalclj+E/Uq4=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+tXyaHb+d1+U7+L5ZwJNxzvPDwqLfNrbe/HpsFECfnQ=
+			ys7jfJeVc8pJqHGopG5D9yCGiKTw9sHHdunk1Nfc3Ho=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -993,28 +993,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+tXyaHb+d1+U7+L5ZwJNxzvPDwqLfNrbe/HpsFECfnQ=
+			ys7jfJeVc8pJqHGopG5D9yCGiKTw9sHHdunk1Nfc3Ho=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i3veX4rRR/oDioBaOwF7cfZa6Wl2KXs6EPoQbfi4p/k=
+			2b0uzDIQ1H2uH1EN9udQ2PNR6NPUGqBKngC+o2Ih2x8=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6dZSq5/ZkdriBmG5I6hFdPXXBMThmbqq/pFOVrfJa4Y=
+			46AWYvqM/COR7ur1MlZiJZqkge37yT/lalclj+E/Uq4=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8J1G6DeJIqaXdzxJoEy752UWppWh16CgaY0Y5Y58wdc=
+			lWLuZt73HX1EvRDADMuXxmEZ287JlDvAHoi1gLwTPrc=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1028,14 +1028,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8J1G6DeJIqaXdzxJoEy752UWppWh16CgaY0Y5Y58wdc=
+			lWLuZt73HX1EvRDADMuXxmEZ287JlDvAHoi1gLwTPrc=
 			</data>
 		</dict>
 		<key>Modules/WalletCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zwK4G4qsNQ01Ip0I6jFbuIvenA60RoEQ4Y5+dAS+ckk=
+			213y/yy77I1H+2wkMKZE6XJJCxhqptqWZGlXe3yfJ/4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

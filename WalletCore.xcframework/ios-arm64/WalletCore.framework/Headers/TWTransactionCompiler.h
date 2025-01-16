@@ -48,4 +48,10 @@ TWData *_Nonnull TWTransactionCompilerCompileWithSignaturesAndPubKeyType(
     const struct TWDataVector *_Nonnull signatures, const struct TWDataVector *_Nonnull publicKeys,
     enum TWPublicKeyType pubKeyType);
 
+TW_EXPORT_STATIC_METHOD
+TWData *_Nonnull TWTransactionCompilerTangemCompileWithSignaturesAndPubKeyType(
+    enum TWCoinType coinType, TWData *_Nonnull txInputData,
+    const struct TWDataVector *_Nonnull signatures, const struct TWDataVector *_Nonnull publicKeys,
+    enum TWPublicKeyType pubKeyType);
+
 TW_EXTERN_C_END
