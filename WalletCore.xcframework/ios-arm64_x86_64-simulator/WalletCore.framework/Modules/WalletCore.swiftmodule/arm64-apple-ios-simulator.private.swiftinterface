@@ -4675,7 +4675,11 @@ public enum Curve : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConverti
   }
 }
 extension Foundation.Data {
+  public init?(hexString: Swift.String)
   public static func reverse(hexString: Swift.String) -> Foundation.Data
+  public var hexString: Swift.String {
+    get
+  }
 }
 extension Swift.KeyedDecodingContainerProtocol {
   public func decodeHexString(forKey key: Self.Key) throws -> Foundation.Data
@@ -14763,7 +14767,7 @@ extension WalletCore.TW_TxCompiler_Proto_PreSigningOutput : SwiftProtobuf.Messag
 public struct TransactionCompiler {
   public static func preImageHashes(coinType: WalletCore.CoinType, txInputData: Foundation.Data) -> Foundation.Data
   public static func compileWithSignatures(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector) -> Foundation.Data
-  public static func tangemCompileWithSignatures(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector) -> Foundation.Data
+  public static func compileWithMultipleSignatures(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector) -> Foundation.Data
   public static func compileWithSignaturesAndPubKeyType(coinType: WalletCore.CoinType, txInputData: Foundation.Data, signatures: WalletCore.DataVector, publicKeys: WalletCore.DataVector, pubKeyType: WalletCore.PublicKeyType) -> Foundation.Data
 }
 public struct TransactionDecoder {
