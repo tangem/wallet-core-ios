@@ -4676,9 +4676,6 @@ public enum Curve : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConverti
 }
 extension Foundation.Data {
   public static func reverse(hexString: Swift.String) -> Foundation.Data
-  public var hexString: Swift.String {
-    get
-  }
 }
 extension Swift.KeyedDecodingContainerProtocol {
   public func decodeHexString(forKey key: Self.Key) throws -> Foundation.Data
